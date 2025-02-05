@@ -17,11 +17,11 @@ const Logo = ({
       href={logoLink}
       className="flex flex-col w-min capitalize leading-7 sm:leading-7 text-2xl sm:text-3xl font-medium"
     >
-      <span className="tracking-wider">Matu </span>
+      <span className="tracking-wider text-3xl">DEV </span>
       <span
         className={`w-min bg-[--color--heading] text-[--color--bg] px-[0.375rem] sm:px-2  sm:py-[0.15rem] sm:mt-1 ${styleSuffix}`}
       >
-        salab
+        Meetup
       </span>
     </Link>
   );
