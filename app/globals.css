@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color--cream-yellow: #feeec6;
+  --fonts--heading: "Plus Jakarta Sans", sans-serif;
+  --fonts--para: "Generalsans Variable", sans-serif;
+  --color--dark: black;
+  --color--grey: #454545;
+  --color--yellow: #fbc53c;
+  --color--heading: #151515;
+  --color--green: #445635;
+  --color--white: #fff;
+  --color-bg: #9ab8a5;
+  --color--bg: #edefee;
+  --color--light-brown: #e1dfdd;
+  --white: white;
+  --black: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: var(--fs-400);
+  line-height: 1.6;
+}
+
+/* basic css reset */
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+br,
+img,
+li,
+ul,
+nav,
+header,
+section,
+article,
+main {
+  margin: 0;
+  padding: 0;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* custom css */
+  .full-bleed {
+    box-shadow: 0 0 0 100vmax var(--color--bg);
+    /* box-shadow: 0 0 0 100vmax var(--color--light-brown); */
+    clip-path: inset(0-100vmax);
+  }
+  .inverse {
+    background: var(--color--bg);
+  }
+
+  .full-bleed-background {
+    /* background-color: var(--color--bg); */
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1; /* Ensure the background is behind other content */
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: min-content 2fr 3fr;
+    grid-template-rows: repeat(2, max-content);
+    height: calc(100vh - 20%);
+  }
+}
