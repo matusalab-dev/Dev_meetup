@@ -19,7 +19,7 @@ const Header = ({
   const currentPathname = usePathname();
   const freelancePathname = "/freelancing";
   return (
-    <header id="header" className="pb-24 inverse full-bleed">
+    <header id="header" className="py-4">
       {/* nav-section */}
       <NavBar
         navBar={headerNavBar}

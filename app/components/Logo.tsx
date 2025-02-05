@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { cn } from "../utils/utils";
 
 const Logo = ({
   logoLink = "/",
-  styleSuffix,
+  styleSuffix = "",
   onToggle,
 }: {
   logoLink?: string;
@@ -14,11 +15,11 @@ const Logo = ({
     <Link
       onClick={onToggle}
       href={logoLink}
-      className="flex flex-col w-min capitalize leading-7 sm:leading-7 text-2xl sm:text-3xl font-medium"
+      className="flex flex-col w-min capitalize leading-7 sm:leading-[0.025rem] text-2xl sm:text-xl font-medium"
     >
-      <span className="tracking-wider text-3xl">DEV </span>
+      <span className="tracking-wider text-2xl">DEV </span>
       <span
-        className={`w-min bg-[--color--heading] text-[--color--bg] px-[0.375rem] sm:px-2  sm:py-[0.15rem] sm:mt-1 ${styleSuffix}`}
+        className={`${cn("w-min bg-black text-pure_white text-lg px-[0.375rem] sm:px-2  sm:py-[0.15rem] -mt-1", styleSuffix)}`}
       >
         Meetup
       </span>

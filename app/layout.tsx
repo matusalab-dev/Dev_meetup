@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-import Head from "next/head";
-
 const satoshi = localFont({
   src: [
     { path: "./fonts/Satoshi-Regular.woff", weight: "400" },
@@ -24,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth scroll-pt-3">
-      <body
-        className={`${satoshi.className} antialiased w-full max-w-[87.5rem] mx-auto px-7 md:px-12`}
-      >
+      <body className={`${satoshi.className} antialiased container`}>
         {children}
       </body>
     </html>

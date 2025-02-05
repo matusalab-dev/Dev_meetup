@@ -4,6 +4,8 @@ import Logo from "../Logo";
 import MobileNavBar from "./MobileNavBar";
 import { NavBarType } from "@/app/constants/navbar";
 import useToggle from "@/app/hooks/useToggle";
+import { ArrowVector } from "@/public/icons/ArrowVector";
+import LinkButton from "./Links";
 
 const NavBar = ({
   navBar,
@@ -19,7 +21,7 @@ const NavBar = ({
   const { isToggled, handleIsToggled } = useToggle();
 
   return (
-    <nav role="navigation" className="flex justify-between items-center pt-6">
+    <nav role="navigation" className="flex justify-between items-center">
       {/* logo */}
       <Logo logoLink={logoLink} />
 
@@ -33,7 +35,7 @@ const NavBar = ({
             <li key={++index} className={navInfo.widthStyle}>
               <Link
                 href={navInfo.scrollInto[routeIndex]}
-                className="capitalize text-lg font-medium hover:tracking-wider transition-[letter-spacing] ease-out duration-100"
+                className="uppercase text-sm font-medium hover:tracking-wider transition-[letter-spacing] ease-out duration-100"
               >
                 {navInfo.navTitle}
               </Link>
@@ -42,13 +44,20 @@ const NavBar = ({
         })}
       </ul>
 
-      <Link
+      <LinkButton />
+      {/* <Link
         href="mailto:www.mtslabrh97@gmail.com"
-        className="w-[9.75rem] relative hidden md:flex flex-col justify-center items-center after:content-[''] after:w-36 hover:after:mx-auto hover:after:w-[9.75rem] after:transition-[width] after:h-[0.07rem] after:bg-[--color--heading] after:block after:absolute after:top-8 text-xl tracking-wide hover:tracking-wider transition-[letter-spacing] ease-out duration-100"
+        className="w-[9.75rem] relative hidden md:flex flex-col justify-center items-center border-dashed border py-2 border-black  after:content-[''] after:w-0 hover:after:mx-auto hover:after:w-max after:transition-[width] after:h-[0.07rem] after:bg-black after:block after:absolute after:top-8 text-xl tracking-wide hover:tracking-wider transition-[letter-spacing] ease-out duration-100"
       >
-        <div className="flex">
-          Get in touch
-          <svg
+        <div className="flex items-center gap-2">
+        learn more
+        <ArrowVector
+            color=" #96f"
+            width="15"
+            height="15"
+            className="rotate-45"
+          />
+         <svg
             className="ml-4 mt-2"
             width="15"
             height="15"
@@ -60,9 +69,9 @@ const NavBar = ({
               d="M4.6047 0.524023L17.3326 0.524024C17.464 0.523951 17.5942 0.549781 17.7156 0.600038C17.837 0.650295 17.9474 0.723993 18.0403 0.816918C18.1332 0.909843 18.2069 1.02017 18.2572 1.1416C18.3074 1.26302 18.3332 1.39317 18.3332 1.52458L18.3332 14.2525C18.3332 14.5179 18.2278 14.7724 18.0401 14.96C17.8525 15.1476 17.598 15.2531 17.3326 15.2531C17.0673 15.2531 16.8128 15.1476 16.6251 14.96C16.4375 14.7724 16.3321 14.5179 16.3321 14.2525L16.3329 3.93847L2.48338 17.788C2.29584 17.9756 2.04149 18.0809 1.77627 18.0809C1.51105 18.0809 1.2567 17.9756 1.06916 17.788C0.881628 17.6005 0.77627 17.3461 0.776271 17.0809C0.776271 16.8157 0.881628 16.5614 1.06916 16.3738L14.9187 2.52425L4.6047 2.52514C4.33933 2.52514 4.08484 2.41972 3.8972 2.23208C3.70956 2.04444 3.60414 1.78994 3.60414 1.52458C3.60414 1.25922 3.70956 1.00472 3.8972 0.817079C4.08484 0.629439 4.33933 0.524023 4.6047 0.524023Z"
               fill="black"
             />
-          </svg>
-        </div>
-      </Link>
+          </svg> 
+         </div>
+      </Link> */}
 
       {/* custom hamburger menu */}
       <button

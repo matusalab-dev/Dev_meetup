@@ -8,17 +8,26 @@ export interface NavBarType {
 
 export const NAV_INFO_HOME: NavBarType[] = [
   {
-    navTitle: "projects",
+    navTitle: "events",
     widthStyle: "w-16",
-    scrollInto: ["#project", "../#project"],
+    scrollInto: ["#project", "../events"],
   },
+
   {
-    navTitle: "about",
+    navTitle: "Hosts",
     widthStyle: "w-12",
-    scrollInto: ["#about", "../#about"],
+    scrollInto: ["speakers", "../#host"],
 
     // logoLink: "./freelancing",
   },
+  {
+    navTitle: "Sponsors",
+    widthStyle: "w-12",
+    scrollInto: ["speakers", "../#sponsors"],
+
+    // logoLink: "./freelancing",
+  },
+
   //   {
   //     navTitle: "contact",
   //     widthStyle: "w-16",

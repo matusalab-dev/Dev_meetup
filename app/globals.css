@@ -3,20 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --color--cream-yellow: #feeec6;
-  --fonts--heading: "Plus Jakarta Sans", sans-serif;
+  --fonts--heading: "Satoshi-variable", "Plus Jakarta Sans", sans-serif;
   --fonts--para: "Generalsans Variable", sans-serif;
-  --color--dark: black;
-  --color--grey: #454545;
-  --color--yellow: #fbc53c;
-  --color--heading: #151515;
-  --color--green: #445635;
-  --color--white: #fff;
-  --color-bg: #9ab8a5;
-  --color--bg: #edefee;
-  --color--light-brown: #e1dfdd;
-  --white: white;
-  --black: black;
+
+  --radius-100: 100px;
+  --radius-large: 2rem;
+  --radius-big: 16px;
+  --radius: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,7 +28,7 @@ body {
 }
 
 /* basic css reset */
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -52,20 +45,31 @@ article,
 main {
   margin: 0;
   padding: 0;
+} */
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+  border-color: rgb(0, 0, 0);
+}
+::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  /* custom css */
   .full-bleed {
-    box-shadow: 0 0 0 100vmax var(--color--bg);
+    box-shadow: 0 0 0 100vmax var(--color--cream-yellow);
     /* box-shadow: 0 0 0 100vmax var(--color--light-brown); */
     clip-path: inset(0-100vmax);
   }
   .inverse {
-    background: var(--color--bg);
+    background: var(--color--cream-yellow);
   }
 
   .full-bleed-background {
@@ -82,8 +86,36 @@ main {
 
   .hero-grid {
     display: grid;
-    grid-template-columns: min-content 2fr 3fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, max-content);
     height: calc(100vh - 20%);
   }
+  .container {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .cover-opacity {
+    background-image: linear-gradient(
+      to bottom,
+      #000 2%,
+      #0000 46%,
+      #03030321 74%
+    );
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+  }
+}
+.cover-opacity._2 {
+  background-image: linear-gradient(to bottom, #000, #0000 66%);
+  width: 50%;
+  margin-left: auto;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  transform: rotate(180deg);
 }

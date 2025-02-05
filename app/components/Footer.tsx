@@ -4,10 +4,10 @@ import { SocialIcons } from "./SocialIcons";
 
 const Footer = ({
   availability = "to work",
-  logoLink,
+  logoLink = "/",
 }: {
   availability?: string;
-  logoLink: string;
+  logoLink?: string;
 }) => {
   return (
     <footer id="footer" className="pt-40 pb-4">
